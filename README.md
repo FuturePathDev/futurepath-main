@@ -12,4 +12,7 @@ A college and career planning platform for students and parents.
 ```bash
 npm install
 npm start
+npm test
+npm run build
 ```
+
