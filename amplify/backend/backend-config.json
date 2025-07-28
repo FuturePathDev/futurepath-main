@@ -1,5 +1,27 @@
 {
   "api": {
+    "AdminQueries": {
+      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "futurepathmain"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "AdminQueries5ff58c53"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "FuturePathAPI": {
       "dependsOn": [
         {
@@ -39,9 +61,39 @@
       "providerPlugin": "awscloudformation",
       "service": "Cognito",
       "serviceType": "managed"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "futurepathmain"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
     }
   },
   "function": {
+    "AdminQueries5ff58c53": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "futurepathmain"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "FuturePathUsersHandler": {
       "build": true,
       "dependsOn": [
@@ -80,6 +132,16 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "UpdateStudentProfile": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "futurepathmainCustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -112,6 +174,22 @@
         {
           "category": "function",
           "resourceName": "GetFuturePathUser"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateStudentProfile_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateStudentProfile"
+        }
+      ]
+    },
+    "AMPLIFY_function_UpdateStudentProfile_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "UpdateStudentProfile"
         }
       ]
     }

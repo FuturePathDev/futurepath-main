@@ -21,6 +21,10 @@
         "GetFuturePathUser": {
           "deploymentBucketName": "amplify-futurepathmain-dev-e70bc-deployment",
           "s3Key": "amplify-builds/GetFuturePathUser-306f4d53507459735a69-build.zip"
+        },
+        "UpdateStudentProfile": {
+          "deploymentBucketName": "amplify-futurepathmain-dev-e70bc-deployment",
+          "s3Key": "amplify-builds/UpdateStudentProfile-326b492b725157727878-build.zip"
         }
       },
       "auth": {

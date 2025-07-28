@@ -1,0 +1,103 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.parent-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+}
+
+.sidebar-parent {
+  width: 220px;
+  background-color: #0d47a1;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar-parent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.sidebar-parent ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-parent li {
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.parent-main-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.header-parent {
+  text-align: right;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.parent-dashboard-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0d47a1;
+}
+
+.dashboard-section {
+  margin-bottom: 40px;
+}
+
+/* Tools Grid Section */
+.parent-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tool-card {
+  padding: 15px;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
+}
+
+.tool-card:hover {
+  background-color: #b2ebf2;
+}
+
+.notifications-panel {
+  background-color: #f5f5f5;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.notifications-panel ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.notifications-panel li {
+  margin-bottom: 12px;
+  padding: 10px;
+  background-color: #fff;
+  border-left: 4px solid #0d47a1;
+  border-radius: 4px;
+}
